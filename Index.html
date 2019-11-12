@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Sistemas Operativos</title>
+
+    <!-- Font Awesome Icons -->
+    <link
+      href="vendor/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic"
+        rel="stylesheet" type="text/css" />
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" />
+
+    <!-- Theme CSS - Includes Bootstrap -->
+    <link href="css/creative.min.css" rel="stylesheet" />
+  </head>
+
+  <body id="page-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 bg-transparent" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">Inicio</a>
+        </div>
+    </nav>
+
+    <!-- Masthead -->
+    <header class="masthead">
+      
+
+        <div class="container h-100">
+            <div class="row h-100 align-items-center justify-content-center text-center">
+                <div class="col-lg-10 align-self-end">
+                    <h1 class="text-uppercase text-white font-weight-bold">
+                        Temas a tratar
+                    </h1>
+                    <hr class="divider my-4" />
+                </div>
+
+               
+
+
+                <div class="col-lg-8 align-self-baseline">
+                    <ul class="list-group list-group-flush text-left bg-transparent ">
+
+
+                            <li class="nav-item list-group-item">
+                                    <a class="nav-link" href="#4.1">4.1 Conceptos fundamentales.
+                                        </a>
+                                  
+                                  </li>
+
+
+
+
+
+                        <li class="nav-item dropdown list-group-item">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                4.2 Requerimientos de la gestión de memoria.
+                            </a>
+                            <div class="dropdown-menu "  aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#4.2.1">4.2.1 Reubicación.</a>
+                                <a class="dropdown-item" href="#4.2.2">4.2.2 Protección.</a>
+                                <a class="dropdown-item" href="#4.2.3">4.2.3 Comparticion.</a>
+                                <a class="dropdown-item" href="#4.2.4">4.2.4 Organización logica y fisica.</a>
+                            </div>
+                          </li>
+                
+                          <li class="nav-item dropdown list-group-item">
+                              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  4.3 Modelo de memoria de un proceso.
+                              </a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="#4.3.1">4.3.1 Fases en la generacion de un ejecutable.</a>
+                                  <a class="dropdown-item" href="#4.3.2">4.3.2 Mapa de memoria de un proceso.</a>
+                                  <a class="dropdown-item" href="#4.3.3">4.3.3 Operaciones sobre regiones.</a>
+                              </div>
+                            </li>
+                
+                            <li class="nav-item dropdown list-group-item">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    4.4 Partición de memoria.
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#4.4.1">4.4.1 Particionamiento estatico y dinamico.</a>
+                                    <a class="dropdown-item" href="#4.4.2">4.4.2 Sistemas de colegas.</a>
+                                    <a class="dropdown-item" href="#4.4.3">4.4.3 Reubicación.</a>
+                                </div>
+                              </li>
+                    
+                              <li class="nav-item list-group-item">
+                                  <a class="nav-link" href="#4.5">4.5 Esquemas de memoria basadas en Asignación Contigua.
+                                    </a>
+                                </li>
+                 
+                                <li class="nav-item list-group-item">
+                                    <a class="nav-link" href="#4.6">4.6 Intercambio.</a>
+                                  </li>
+                             
+                        
+                    </ul>
+
+                    <!-- <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about"></a>-->
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          
+         
+        
+        </ul>
+        
+      </div>
+
+    </header>
+
+   
+
+    <!-- About Section -->
+    <section class="page-section bg-primary" id="4.1">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h1 class="text-white mt-0">4.1 Conceptos fundamentales.</h1>
+            <hr class="divider light my-4" />
+            <p class="text-white mb-4 text-left">  
+				La memoria es uno de los principales recursos de la computadora, la cual debe de administrarse con mucho cuidado. Aunque actualmente la mayoría de los sistemas de cómputo cuentan con una alta capacidad de memoria, de igual manera las aplicaciones actuales tienen también altos requerimientos de memoria, lo que  sigue generando escasez de memoria en los sistemas multitarea y/o multiusuario.  </p> 
+
+				<h4 class="text-white mb-4 text-left">Memoria real </h4>
+				<p class="text-white mb-4 text-left">La memoria real o principal es en donde son ejecutados los programas y procesos de una computadora y es el espacio real que existe en memoria para que se ejecuten los procesos. Por lo general esta memoria es de mayor costo que la memoria secundaria, pero el acceso a la información contenida en ella es de más rápido acceso. </p>
+
+				<h4 class="text-white mb-4 text-left">Memoria virtual </h4>
+				<h5 class="text-white mb-4 text-left">Tenemos dos conceptos  que normalmente a parecen unidos: </h5>
+				
+				<p class="text-white mb-4 text-left">1. El uso de almacenamiento secundario para ofrecer al conjunto de las aplicaciones la ilusión de tener mas memoria RAM de la que realmente hay en el sistema.</br> </br>2. Ofrecer a las aplicaciones la ilusión de que están solas en el sistema, y que por lo tanto, pueden usar el espacio de direcciones completo. </p>
+		
+				
+
+
+
+				            <!-- <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>-->
+          </div>
+        </div>
+      </div>
+      
+    </section>
+
+    <!-- Services Section -->
+
+    <!-- Portfolio Section -->
+
+    <!-- Call to Action Section -->
+
+    <!-- Contact Section -->
+    <section class="page-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h1 class="mt-0">4.2 Requerimientos de la gestión de memoria</h1>
+          </div>
+        </div>
+      </div>
+        <br><br><br>
+      <div class="container" id="4.2.1" > 
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-left" >
+                <h2  class="mt-0" >
+                    4.2.1 Reubicación
+                </h2>
+                <br>
+                <p class="text-muted mb-5 text-left" >
+
+                    En los sistemas con memoria virtual, los programas durante su ejecución pueden salir por un tiempo de la memoria y luego regresar, de modo que no pueden colocarse en el lugar que ocupaban previamente. Por ello debe ser posible que residan en diferentes partes de la memoria en diferentes momentos. Así, la gestión de memoria en el sistema operativo debe ser capaz de trasladar los programas en memoria y manejar referencias a la memoria y las direcciones en el código del programa para que siempre apunten a la ubicación correcta. La unidad de gestión de memoria virtual también debe hacer frente a la concurrencia.
+
+                    Reubicación crea un espacio lógico 	independiente	para el	proceso. El	Sistema operativo debe	poder	acceder	 a espacios lógicos de los procesos.	
+                    
+
+                   </p>
+               
+            </div>
+        </div>
+      </div>
+    
+
+
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-left">
+            <h2 class="mt-0" id="4.2.2">4.2.2 Protección</h2>
+            <br>
+            <img src="img/protect.jpg" class="rounded float-right" alt="..." />
+          
+            <p class="text-muted mb-5 text-left">
+              El sistema operativo sólo puede combinar el nivel de referencia y
+              nunca puede hacer una referencia al bloque de control de procesos.
+              Los procesos no deberían ser capaces de referenciar el espacio de
+              memoria de otro proceso sin permiso. Es imposible comprobar las
+              direcciones absolutas de los programas puesto que estos pueden ser
+              reubicado La protección de memoria es un método para controlar el
+              uso de memoria en una computadora, y es parte esencial de
+              prácticamente todos los sistemas operativos modernos. El principal
+              propósito de la protección de memoria es evitar que un proceso en
+              un sistema operativo acceda a la memoria que no le ha sido
+              asignada.
+            </p>
+          </div>
+        </div>
+      </div>
+        </div>
+      </div>
+      
+
+<!--4.2.3-->
+
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-left">
+        <h2 class="mt-0" id="4.2.3">4.2.3 Compartición</h2>
+        <br>
+        <p class="text-muted mb-5 text-left">
+        La memoria compartida es una de las técnicas más rápidas para posibilitar la comunicación entre procesos.
+        En la compartición, el segmento de datos y el segmento de código comparten el mismo segmento de código 
+        pero cada un conserva su independencia trabajando individualmente.
+        </p>
+
+        <ul class="text-muted mb-5 text-left">
+
+                <li>A varios procesos acceder a la misma zona de memoria.</li>
+                <li>A cada proceso (persona) acceso a la misma copia del programa que tener a cada uno su copia individual.</li>
+                <li>Accesos controlados a las áreas compartidas de la memoria, sin comprometer la protección básica.</li>
+
+        </ul>
+        <p class="text-muted mb-5 text-left">
+            Un ejemplo de este requerimiento es, si una serie de procesos están ejecutando en el mismo programa, resultaría beneficioso permitir a cada proceso que acceda a la misma copia del programa, en lugar de tener cada uno su propia copia.
+            </p>
+
+      </div>
+    </div>
+  </div>
+
+
+
+<!--4.2.3-->
+
+      <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="mt-0 text-left" id="4.2.4">
+                    4.2.4 Organización Lógica y Física de un Sistema Operativo
+                </h2>
+                <br>
+                <p class="text-muted mb-5 text-left">
+
+                    Se refiere a las diferentes maneras en las que puede ser organizada la información
+                    de los archivos, así como las diferentes maneras en que ésta puede ser accesada.
+                    Dado que hay 2 niveles de visión de los archivos (físico y lógico), se puede hablar
+                    también
+                    de 2 aspectos de organización de archivos: Organización de archivos lógicos y de
+                    archivos físicos
+                   </p>
+
+                   <div class="col-md-4">
+                   
+                </div>
+
+               
+                <div class="container p-4">
+                    <div class="row">
+                        <div class="container p-4">
+                            <div class="row">
+                                <div class="col-md-4 text-left">
+                                    <br><br><br>
+                                    <li>Organización lógica.</li>
+                                </div>
+                                <div class="col text-left">
+                                    La mayoría de las computadoras organizan los archivos en jerarquías llamadas
+                                    carpetas, directorios o catálogos. (El concepto es el mismo independientemente
+                                    de la terminología usada.) Cada carpeta puede contener un número arbitrario de
+                                    archivos, y también
+                                    puede contener otras carpetas. Las otras carpetas pueden contener todavía más
+                                    archivos y carpetas, y así sucesivamente, construyéndose una estructura en árbol
+                                    en la que una «carpeta raíz» (el nombre varía de una
+                                    computadora a otra) puede contener cualquier número de niveles de otras carpetas
+                                    y archivos.
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <p class="text-muted mb-5 text-left">
+                            La mayor parte de las estructuras de organizaciones alternativas de archivos se encuentran dentro de estas cinco categorías:
+                           </p>
+
+                           <p class="text-muted mb-5 text-left">
+                            Pilas <br>
+                            <img src="img/1.png" class="rounded float-right"  alt="..." />
+                            Es la forma más fácil de organizar un archivo. Los datos se recogen en el orden en que llegan. Su objetivo es simplemente acumular una masa de datos y guardarla.                            
+                           </p>
+
+                         
+                           
+
+                           <p class="text-muted mb-5 text-left">
+                            Archivos secuenciales<br><br>
+                            Es la forma más común de estructura de archivos.  Se emplea un formato fijo para los registros, son de la misma longitud y constan del mismo número de campos de tamaño fijo con un orden determinado.
+                           </p>
+
+
+
+                           <p class="text-muted mb-5 text-left">
+                            Archivos secuenciales indexados  <br><br>
+                            <img src="img/2.png" class="rounded float-right" alt="..." />  
+                            Los registros se organizan en una secuencia basada en un campo clave presentando dos características, un índice del archivo para soportar los accesos aleatorios y un archivo de desbordamiento. El índice proporciona una capacidad de búsqueda para llagar rápidamente al registro deseado y el archivo de desbordamiento es similar al archivo de registros usado en un archivo secuencial, pero está integrado de forma que los archivos de desbordamiento se ubiquen siguiendo un puntero desde su registro predecesor.       
+                           
+                        </p>
+
+                        <p class="text-muted mb-5 text-left">
+                            Archivos indexados <br><br>
+                            <img src="img/3.png" class="rounded float-right" alt="..." />  
+                            A los registros se accede solo a través de sus índices. No hay restricción en la ubicación de los registros, al menos un índice contiene un puntero a cada registro y pueden emplearse registros de longitud variable.
+                        </p>
+                        
+
+
+
+                        <div class="container p-4">
+                            <div class="row">
+                                <div class="col-md-4 text-left">
+                                    <br><br><br>
+                                    <li>Organización física.</li>
+                                </div>
+                                <div class="col text-left">
+                                    Los datos son arreglados por su adyacencia física, es decir, de acuerdo con el
+                                    dispositivo de almacenamiento secundario. Los registros son de tamaño fijo o de
+                                    tamaño variable y pueden organizarse de varias formas para constituir archivos
+                                    físicos.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container p-4">
+                            <div class="row">
+                                <div class="col-md-4 text-left">
+                                    <br><br><br>
+                                    <li>Cinta magnética.</li>
+                                </div>
+                                <div class="col text-left">
+                                    En este dispositivo el archivo físico está formado por un conjunto de registros físicos, y los bloques están organizados en forma consecutiva, ya que se asigna en igual forma.
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="text-muted mb-5 text-left">
+                            Discos Magnéticos <br><br>
+                            <img src="img/4.png" class="rounded float-right" alt="..." />  
+                            El archivo físico en un disco es una colección de registros físicos de igual tamaño, los cuales pueden estar organizados en forma consecutiva, ligada o con una tabla de mapeo
+                        </p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+        </div>
+    </div>
+      
+
+    </section>
+    <hr class="divider my-4" />
+    <section class="page-section" id="contact">
+        <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8 text-center" >
+                <h1 class="mt-0">4.3 Modelo de memoria de un proceso</h1>
+              </div>
+            </div>
+          </div>
+    <br><br><br>
+
+    <div class="container">
+        <div class="row justify-content-center" >
+            <div class="col-lg-8 text-left" id="4.3.1">
+                <h2 class="mt-0">
+                    4.3.1 Fases en la generacion de un ejecutable
+                </h2>
+                <br><br><br>
+               
+                <p class="text-muted mb-5 text-left">
+
+                    Habitualmente los programadores desarrollan sus aplicaciones utilizando lenguajes de
+                    alto nivel. En general, una aplicación estará compuesta por un conjunto de módulos
+                    de código fuente que deberán ser procesados para obtener el ejecutable de la
+                    aplicación.
+                    Este procesamiento típicamente consta de dos fases : Compilación y Montaje.
+                    
+                </p>
+                <div class="container p-4">
+                    <div class="row">
+                        <div class="col-md-12">
+
+
+                            <div class="col text-left">
+                               
+                                <li>Compilación: Se genera el código máquina correspondiente a cada módulo fuente de
+                                    la aplicación asignando direcciones a los símbolos definidos en el módulo y
+                                    resolviendo las referencias a los mismos. Así, si a una variable
+                                    se le asigna una determinada posición de memoria, todas las instrucciones que
+                                    hagan referencia a esa variable deben especificar dicha dirección. Las
+                                    referencias a símbolos que no están definidos en el módulo quedan
+                                    pendientes de resolver hasta la fase de montaje. Como resultado de esta fase se
+                                    genera un módulo objeto por cada archivo fuente.</li>
+                                <br><br><br>
+                                <li>Montaje (o enlace): Genera un ejecutable agrupando todos los archivos objeto y
+                                    resolviendo las referencias entre módulos, o sea, haciendo que las referencias a
+                                    un determinado símbolo apunten a la dirección asignada
+                                    al mismo. Además de este tipo de referencias, pueden existir referencias a
+                                    símbolos definidos en otros archivos objeto previamente compilados agrupados
+                                    normalmente en bibliotecas. El montador, por tanto, debe generalmente
+                                    incluir en el ejecutable otros objetos extraídos de las bibliotecas
+                                    correspondientes. Así, por ejemplo, si la aplicación usa una función matemática
+                                    como la que calcula el coseno, el montador deberá extraer de la
+                                    biblioteca matemática el objeto que contenga la definición de dicha función,
+                                    incluirlo en el ejecutable y resolver la referencia a dicha función desde la
+                                    aplicación de manera que se corresponda con la dirección
+                                    de memoria adecuada.</li>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!---4.3.2-->
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-left" id="4.3.2">
+                <h2 class="mt-0">
+                    4.3.2 Mapa de memoria de un proceso.
+                </h2>
+                <br><br><br>
+                <p class="text-muted mb-5 text-left">
+                    Objeto de memoria
+                </p>
+    
+                <ul class="text-muted mb-5 text-left">
+                    <li>Región de memoria que tiene asignada determinada información.</li><br>
+                    <li>Cada región es una zona contigua que esta caracterizada por la dirección dentro del mapa
+                        de proceso donde comienza y por su tamaño.</li><br>
+                  </ul> 
+    
+                  <p class="text-muted mb-5 text-left">
+                    Caracteristicas de cada región:
+                </p>
+    
+             
+        <ul class="text-muted mb-5 text-left">
+        <li>Soporte de la región. El objeto de memoria asociado a la región.</li><br>
+        <li>Soporte en archivo. Objeto está almacenado en un archivo.</li><br>
+        <li>Si soporte. Objeto no tiene un contenido inicial.</li><br>
+        </ul>
+
+        <br>
+        <p class="text-muted mb-5 text-left">
+            Tipo de uso compartido
+            <br> <br>
+            Privada: EL contenido de la región solo es accesible al proceso que la contiene. <br> <br>
+            Compartida: El contenido de la región puede ser compartido por varios procesos. <br> <br>
+            Protección: Tipo de acceso permitido.
+
+        </p>
+        <ul class="text-muted mb-5 text-left">
+            <li>Lectura.</li><br>
+            <li>Ejecución.</li><br>
+            <li>Escritura.</li>
+          </ul> 
+          <p class="text-muted mb-5 text-left">
+            Los sistemas operativos modernos ofrecen un modelo de memoria dinámico en el que el mapa de
+            un proceso está formado por un numero variable de regiones que pueden añadirse o eliminarse
+            durante su ejecución. <br> <br>
+
+        </p>
+
+            </div>
+        </div>
+        </div>
+
+
+
+
+    <!---4.3.2-->
+
+
+
+    <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 text-left" id="4.3.3">
+            <h2 class="mt-0">
+                4.3.3 Operaciones sobre regiones.
+            </h2>
+            <br><br><br>
+            <p class="text-muted mb-5 text-left">
+                Como ya sabemos, el espacio de direccionamiento de un proceso se compone de varias regiones
+                de memoria y cada región de memoria se caracteriza por varios atributos:
+            </p>
+
+            <ol class="text-muted mb-5 text-left">
+                <li>Sus direcciones de inicio y fin.</li><br>
+                <li>Los derechos de acceso que tiene asociados.</li><br>
+                <li>El objeto asociado( por ejemplo, un archivo ejecutable que contiene el codigo ejecutado
+                    por el proceso).</li><br>
+              </ol> 
+
+              <p class="text-muted mb-5 text-left">
+                Las regiones de memoria contenidas en el espacio de direccionamiento de un proceso
+                pueden determinarse mostrando el contenido del archivo maps, situado en el directorio 
+                de cada proceso en el sistema de archivos / proc.
+            </p>
+
+            <p class="text-muted mb-5 text-left">
+                Las operaciones que el kernel del sistema operativo puede realizar sobre las regiones de memoria de un proceso son las siguientes:
+            </p>
+    <ol>
+    <li>Creación de región: Al crear mapa inicial o por solicitud posterior.</li><br>
+    <li>Liberación de región: Al terminar el proceso o por solicitud posterior.</li><br>
+    <li>Cambio de tamaño de región: Del heap o de la pila (stack).</li><br>
+    <li>Duplicado de región: Operación requerida por el servicio fork.</li><br>
+    </ol>
+        </div>
+    </div>
+    </div>
+    
+    </section>
+    <hr class="divider my-4" />
+    <section class="page-section" id="contact">
+    <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+            <h1 class="mt-0">
+                4.4 Partición de memoria.
+            </h1>
+            <br><br><br>       
+        </div>
+    </div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center" id="4.4.1">
+                <h2 class="mt-0 text-left">
+                    4.4.1 Particionamiento estatico y dinamico.
+                </h2>
+                <br>
+                <p class="text-muted mb-5 text-left">
+                        ¿Que son Particiones?
+                        <br><br>
+
+                        El primer intento para posibilitar la multiprogramación fue la creación de particiones fijas o estáticas, en la memoria principal, una partición para cada tarea. El tamaño de la partición se especificaba al encender el sistema, cada partición podía re-configurarse al volver a encender el sistema o reiniciar el sistema.
+                        Este esquema introdujo un factor esencial, la protección del espacio de memoria para la tarea. Una vez asignada una partición a una tarea, no se permitía que ninguna otra tarea entrara en sus fronteras. Este esquema de partición es más flexible que la de usuario único, porque permite que varios programas estén en memoria al mismo tiempo.
+                        
+                   </p>
+
+               
+               
+                <div class="container p-4">
+                    <div class="row">
+                        <div class="container p-4">
+                            <div class="row">
+                                <div class="col-md-4 text-left">
+                                    <br><br><br>
+                                    <li>FIJAS.</li>
+                                </div>
+                                <div class="col text-left">
+                                        El primer intento para posibilitar la multiprogramación fue la creación de particiones fijas o estáticas, en la memoria principal, una partición para cada tarea. El tamaño de la partición se especificaba al encender el sistema, cada partición podía re-configurarse al volver a encender el sistema o reiniciar el sistema.
+                                        Este esquema introdujo un factor esencial, la protección del espacio de memoria para la tarea. Una vez asignada una partición a una tarea, no se permitía que ninguna otra tarea entrara en sus fronteras. Este esquema de partición es más flexible que la de usuario único, porque permite que varios programas estén en memoria al mismo tiempo.
+                                        
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container p-4">
+                            <div class="row">
+                                <div class="col-md-4 text-left">
+                                    <br><br><br>
+                                    <li>DINÁMICAS.</li>
+                                </div>
+                                <div class="col text-left">
+                                        Consiste en particiones de memoria de tamaños variable, es decir, a cada proceso se le asigna la cantidad de memoria que necesita deben utilizarse algunos algoritmos para la ubicación de procesos en las particiones. Estos algoritmos son:
+                                        Mejor ajuste (Best-fit): se elige el bloque con el tamaño más parecido al del proceso entrante.
+                                        Primer ajuste (First-fit): comienza recorriendo la memoria desde el comienzo y escoge el primer bloque disponible en el que entre el proceso entrante
+                                        Siguiente ajuste (Next-fit): recorre la memoria desde el lugar de la última ubicación y elige el siguiente bloque disponible que sea suficientemente grande.
+                                        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+            <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 text-left" id="4.4.2">
+                            <h2 class="mt-0">
+                                4.4.2 Sistemas Colegas (buddy system)
+                            </h2>
+        
+                           
+                            <p class="text-muted mb-5 text-left"></p>
+                            <div class="container p-4">
+                                <div class="row">
+                                    <div class="col-md-12">
+        
+        
+                                        <div class="col text-left">
+                                            <p>El sistema buddy es un algoritmo para la gestión de memoria, a continuación un
+                                                pequeño extracto del libro “Sistemas Operativos” de William Stallings:</p>
+        
+                                            <p>El sistema buddy es un compromiso razonable para eliminar las desventajas de los
+                                                esquemas de particionamiento tanto fijo, como variable, pero en los sistemas
+                                                operativos contemporáneos, la memoria virtual basada en paginación
+                                                y segmentación es superior.</p>
+        
+                                            <p>La desventajas de un esquema de particionamiento fijo es que limita el número de
+                                                procesos activos y puede utilizar el espacio ineficiente si existe un mal ajuste
+                                                entre los tamaños de partición disponibles y los tamaños
+                                                de los procesos; un esquema de particionamiento dinámico es más complejo de
+                                                mantener e incluye la sobrecarga de la compactación.</p>
+        
+                                            <p>En un sistema buddy, los bloques de memoria disponibles son de tamaño 2^k, L = K
+                                                = U, donde: <br> 2^L = bloque de tamaño más pequeño asignado <br> 2^U = bloque
+                                                de tamaño mayor asignado; normalmente 2^U es el tamaño
+                                                de la memoria completa disponible.
+                                            </p>
+        
+                                            <p>Para comenzar, el espacio completo disponible se trata como un único bloque de
+                                                tamaño 2^U. Si se realiza una petición de tamaño s, tal que 2^U-1 s =2^U, se
+                                                asigna el bloque entero. <br> En otro caso, el bloque se divide
+                                                en dos bloques buddy iguales de tamaño 2^U-1, entonces se asigna la petición a
+                                                uno de los otros dos bloques. En otro caso, uno de ellos se divide por la mitad
+                                                de nuevo. <br> Este proceso continua hasta que el bloque
+                                                más pequeño mayor o igual que s se genera y se asigna a la peticion.
+        
+                                                <p>A continuación un programa para probar el sistema buddy:</p>
+                                                <a
+                                                    href="http://germix.hol.es/wp-content/uploads/2017/01/BuddySystem.zip">BuddySystem.zip</a>
+        
+                                                <p>A continuación el ejemplo provisto por el libro “Sistemas Operativos” de
+                                                    William Stallings: <br> reset 1M</p>
+                                                <img src="http://www.germix.tk/wp-content/uploads/2017/01/BuddySystem-001-300x157.png"
+                                                    alt="">
+                                                <p>
+                                                    A = alloc 100K <br> B = alloc 240K <br> C = alloc 64K <br> D = alloc 256K
+                                                    <br>
+                                                </p>
+                                                <img src="http://www.germix.tk/wp-content/uploads/2017/01/BuddySystem-002-300x157.png"
+                                                    alt="">
+        
+                                                <p>free B <br> free A <br> E = alloc 75K <br> free C<br> free E</p>
+                                                <img src="http://www.germix.tk/wp-content/uploads/2017/01/BuddySystem-003-300x157.png"
+                                                    alt="">
+        
+                                                <p>free D</p>
+                                                <img src="http://www.germix.tk/wp-content/uploads/2017/01/BuddySystem-004-300x157.png"
+                                                    alt="">
+                                        </div>
+                                    </div>
+                                    <div class="container p-4">
+        
+        
+                                        <div class="row">
+                                            <div class="col-md-4">
+        
+                                            </div>
+        
+                                            <div class="col text-left">
+        
+                                            </div>
+        
+        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        
+
+                <!---4.4.3-->
+
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 text-left" id="4.4.3">
+                            <h2 class="mt-0">
+                                4.4.3 Reubicacion.
+                            </h2>
+                            <br><br><br>
+                            <p class="text-muted mb-5 text-left">
+                                Se refiere a la capacidad de cargar y ejecutar un programa determinado en la posición arbitraria de memoria en contraposición a un conjunto fijo de posiciones especificadas durante la compilación de dicho programa
+                            </p>
+                            <p class="text-muted mb-5 text-left">
+                                Reubicacion
+                            </p>
+                            <p class="text-muted mb-5 text-left">
+                                El compilador traduce direcciones de memoria simbólicas a direcciones binarias.<br>
+
+                                Si las direcciones binarias son absolutas, el programa sólo se puede ejecutar en una zona fija de la memoria: NO ES REUBICABLE. Ej.: los programas con formato .COM de MSDOS
+                                <br>
+                                Nos interesa que el compilador no genere direcciones definitivas, sino direcciones provisionales, reubicables. Cuando se sepa dónde van a residir el código y los datos, se convertirán a direcciones absolutas.
+                            </p>
+
+                            <p class="text-muted mb-5 text-left">
+                                ¿En qué momento (etapa) se realiza esta reubicación?
+                            </p>
+                
+                            <ol class="text-muted mb-5 text-left">
+                                <li>Carga (enlazador o cargador) à Reubicación estática.</li><br>
+                                <li>Ejecución (hardware) à Reubicación dinámica.</li><br>
+                               
+                              </ol> 
+                
+                              <p class="text-muted mb-5 text-left">
+                                Reubicacion Dinamica
+                                direcciones lógicas/direcciones físicas
+                            </p>
+                
+                            <p class="text-muted mb-5 text-left">
+                                  
+                            </p>
+                    <ol>
+                    <li>Dirección física: la que llega al chip de memoria Dirección lógica o virtual: la generada por la CPU.</li><br>
+                    <li> Código reubicable.</li><br>
+                    <li> Las direcciones físicas se calculan en tiempo de ejecución, por medio de un soporte hardware especializado (unidad de gestión dememoria, MMU).</li><br>
+                   
+                    </ol>
+
+
+                    <p class="text-muted mb-5 text-left">
+                        Reubicacion Estatica          
+                    </p>
+
+                    <p class="text-muted mb-5 text-left">
+                        Dirección lógica = dirección física. <br><br>
+                        El código máquina contiene direcciones relativas al comienzo del programa (código reubicable) , que se vinculan a direcciones físicas al comenzar su ejecución. <br>
+                    </p>
+
+
+
+                        </div>
+                    </div>
+                    </div>
+
+                
+
+
+                  <!---4.4.3-->
+            
+    </section>
+    <hr class="divider my-4" />
+
+    <section class="page-section" id="contact">
+
+            <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 text-center" id="4.5">
+                            <h1 class="mt-0">
+                                4.5 Esquemas de memoria basadas en Asignación Contigua
+                            </h1>
+                            <br>
+                           
+                            <p class="text-muted mb-5 text-left"></p>
+                            <div class="container p-4">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <img src="img/contigua.png" class="rounded float-right" alt="..." />
+                                    </div>
+
+                                    <div class="col text-left">
+                                        La asignación de memoria es una de las principales responsabilidades de los
+                                        sistemas operativos, pues esta es la forma que el mismo tiene de destinar y
+                                        dedicar una cierta cantidad de memoria a los procesos en ejecución. Un
+                                        esquema simple de administración
+                                        de memoria consiste en asignar a cada proceso una zona contigua de memoria
+                                        para que en ella resida su mapa de memoria. La asignación de almacenamiento
+                                        para un programa se hace en un único bloque de posiciones continuas
+                                        de memoria: Particiones fijas (La memoria se puede organizar para dividirse
+                                        en varias partes, las cuales varían el tamaño) y Particiones variables (El
+                                        sistema operativo lleva una tabla indicando cuáles partes de la memoria
+                                        están disponible u ocupadas).
+
+                                        <br><br><br> Gestión del Sistema Operativo
+
+                                    </div>
+                                </div>
+
+                                <div class="container p-4">
+
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <img src="img/contigua2.png" class="rounded float-right" alt="..." />
+
+                                        </div>
+
+                                        <div class="col text-left">
+                                            <li>Almacenar los registros límite y base del proceso, carga dichos
+                                                registros cuando se activa un proceso.
+                                            </li>
+                                            <li>Mantiene información sobre el estado de ocupación de la memoria.
+                                            </li>
+                                            <li> Bajo este esquema se genera una fragmentación externa.</li>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            </section>
+
+            <hr class="divider my-4" />
+        
+
+    <section class="page-section" id="contact">
+
+            <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 text-center" id="4.6">
+                            <h1 class="mt-0">
+                                4.6 Intercambio
+                            </h1>
+                            <br>
+
+                            
+                            <p class="text-muted mb-5 text-left">
+                                    El espacio de intercambio es una zona del disco que se usa para guardar las imágenes de los procesos que no han de mantenerse en memoria física. A este espacio se le suele llamar swap, del inglés "intercambiar".
+                                    La mayoría de los sistemas operativos modernos poseen un mecanismo llamado memoria virtual, que permite hacer creer a los programas o sistemas operativos que tienen más memoria que la disponible realmente. Como en realidad no se tiene físicamente toda esa memoria, algunos procesos no podrán ser ubicados en la memoria RAM.
+                                    En este caso es cuando es útil el espacio de intercambio: el sistema operativo puede buscar un proceso poco activo, y moverlo al área de intercambio (el disco duro) y de esa forma liberar la memoria principal para cargar otros procesos. Mientras no haga falta, el proceso extraído de memoria puede quedarse en el disco, ya que ahí no utiliza memoria física. Cuando sea necesario, el sistema vuelve a hacer un intercambio, pasándolo del disco a memoria RAM. Es un proceso lento (comparado con usar sólo la memoria RAM), pero permite dar la impresión de que hay más memoria disponible.
+                                
+                            </p>
+                        </div>
+                    </div>
+            </div>
+            
+                    
+    </section>
+    
+
+
+
+    <!-- Footer -->
+    <footer class="bg-light py-5">
+      <div class="container">
+        <div class="small text-center text-muted">
+          Copyright &copy; 2019 - Sistemas Operativos.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/creative.min.js"></script>
+  </body>
+
+  <style>
+    img {
+      width: 200px;
+      height: 200px;
+    }
+
+    h2 {
+      text-decoration: underline;
+    }
+    
+    
+  </style>
+</html>
+
